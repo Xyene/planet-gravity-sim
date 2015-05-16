@@ -16,7 +16,7 @@ public class Sim extends JFrame {
         public double r;
     }
 
-    public List<Body> bodies = new LinkedList<Body>();
+    public List<Body> bodies = new LinkedList<>();
     public static final double G = 6.67;
     public static final int UPS = 60;
 
@@ -92,7 +92,7 @@ public class Sim extends JFrame {
     }
 
     public Sim() {
-        super("Gravity");
+        super("Planet Gravity Simulator");
         setLayout(new BorderLayout());
         add(new JPanel() {
             private Timer ticker;
@@ -109,6 +109,7 @@ public class Sim extends JFrame {
                 ticker = new Timer(1000 / UPS, (x) -> {
                     long t = -1 * (last - (last = System.currentTimeMillis()));
                     double v = t / (1000.0 / UPS);
+                    // This is technically not correct, but the results are good enough if ran often enough
                     Sim.this.update(v);
                     paintImmediately(getBounds());
                 });
