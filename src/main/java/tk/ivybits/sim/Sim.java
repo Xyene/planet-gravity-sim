@@ -176,10 +176,8 @@ public class Sim extends JFrame {
             }
         }, BorderLayout.CENTER);
 
-        setSize(new Dimension(640, 480)
-
-        );
-
+        setSize(new Dimension(640, 480));
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
